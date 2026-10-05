@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Face API -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Face Recognition Attendance</h1>
+        <p>Smart Student Attendance System</p>
+    </header>
+
+    <main>
+
+        <section class="camera-section">
+
+            <div class="video-container">
+                <video id="video" autoplay muted></video>
+                <canvas id="overlay"></canvas>
+            </div>
+
+            <div class="status">
+                <span id="statusDot"></span>
+                <span id="status">Loading face recognition...</span>
+            </div>
+
+            <div class="buttons">
+                <button id="startBtn">Start Camera</button>
+                <button id="stopBtn">Stop Camera</button>
+                <button id="markBtn">Mark Attendance</button>
+            </div>
+
+        </section>
+
+        <section class="attendance-section">
+
+            <h2>Today's Attendance</h2>
+
+            <div class="info">
+                <div>
+                    <h3 id="total">0</h3>
+                    <p>Present</p>
+                </div>
+
+                <div>
+                    <h3 id="date"></h3>
+                    <p>Date</p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>ID</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceTable">
+                </tbody>
+            </table>
+
+            <button class="clear-btn" id="clearBtn">
+                Clear Attendance
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
